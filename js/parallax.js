@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {
 	
+	// parallax effect  by eTatev
 	{
 		const parent = $('header.parallax-Parent');
 
@@ -22,8 +23,11 @@ jQuery(document).ready(function($) {
 			let y = Math.floor(e.clientY);
 
 
-			if((x >= 50 && x <= (widthP - 50)) && (y >= 50 && y <= (heightP - 50))) {
-				plBg_X = x - (plBg.width()/ 4);
+			if(x >= 0 && x <= widthP) {
+				plBg_X = x - 100;
+			}
+
+			if(y >= 0 && y <= heightP){
 				plBg_Y = y - (plBg.height() / 4);
 			}
 
@@ -37,16 +41,20 @@ jQuery(document).ready(function($) {
 
 			if( (x >= 0 && x <= widthP/2)){
 				left_X = -30;
+				right_X = -5;
 			}
 			if( (x > widthP/2 && x <= widthP)){
 				left_X = -5;
+				right_X = -30
 			}
 			
 			if( (y >= 0 && y <= heightP/2)){
 				left_Y = -50;
+				right_Y = -50;
 			}
 			if( (y > heightP/2 && y <= heightP)){
 				left_Y = 20;
+				right_Y = 20;
 			}
 
 			plBg.css({
@@ -57,6 +65,11 @@ jQuery(document).ready(function($) {
 			ball_left.css({
 				left: `${left_X}%`,
 				top: `${left_Y}%`
+			});
+
+			ball_right.css({
+				right: `${right_X}%`,
+				top: `${right_Y}%`
 			});
 
 		});
