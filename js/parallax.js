@@ -7,8 +7,6 @@ jQuery(document).ready(function($) {
 		let plBg_Y = parseFloat(plBg.css('top'));
 		let step = 1;
 
-		// console.log(plBg, plBg_X, plBg_Y);
-
 		parent.mousemove(function(e) {
 			let widthP = $(this).width();
 			let heightP = $(this).height();
@@ -17,14 +15,17 @@ jQuery(document).ready(function($) {
 
 
 			if((x >= 50 && x <= (widthP - 50)) && (y >= 50 && y <= (heightP - 50))) {
-				plBg_X = x - (plBg.width()/ 2);
-				plBg_Y = y - (plBg.height() / 2);
+				plBg_X = x - (plBg.width()/ 4);
+				plBg_Y = y - (plBg.height() / 4);
 			}
 
-			// if( ((x > widthP /2  && x <= widthP) && (y >= 0  && y <= heightP / 2))
-			// 	|| ((x > widthP/2 && x <= widthP ) && (y > heightP / 2 && y <= heightP)))
+			if(x + plBg.width() >= widthP + plBg.width() / 4){
+				plBg_X = widthP - (plBg.width() - 50);
+			}
 
-
+			if( y + plBg.height() >= heightP +plBg.height() / 4){
+				plBg_Y = heightP - (plBg.height() - 50);
+			}
 
 			plBg.css({
 				left: `${plBg_X}px`,
