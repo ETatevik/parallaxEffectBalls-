@@ -34,10 +34,10 @@ header > .container{
 	position: relative;
 	left: calc(50% - 50%);
 	top:calc(50% - 50%);
+	z-index: 100;
 	-webkit-transition: 2.5s;
 	-o-transition: 2.5s;
 	transition: 2.5s;
-	z-index: 100;
 }
 
 .parallax > .bg-parallex-et > img{
@@ -45,20 +45,26 @@ header > .container{
 	height: 100%;
 }
 .parallax > .box-left-et{
-	width: 587px;
-	height: 587px;
+	width: 987px;
+	height: 987px;
 	position: absolute;
 	border-radius: 100%;
 	background: linear-gradient( 210deg,#A9F0C5,#54C7F4);
 	left: -20%;
 	top: 10%;
+	-webkit-transition: 3s;
+	-o-transition: 3s;
+	transition: 3s;
 }
 .parallax > .box-right-et{
-	width: 397px;
-	height: 397px;
+	width: 797px;
+	height: 797px;
 	position: absolute;
 	border-radius: 100%;
 	background: linear-gradient( 45deg,#54C7F4,#A9F0C5);
 	right: -10%;
 	top: 10%;
+	-webkit-transition: 3s;
+	-o-transition: 3s;
+	transition: 3s;
 }
